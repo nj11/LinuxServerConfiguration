@@ -186,28 +186,28 @@ Configure the Uncomplicated Firewall (UFW) to only allow incoming connections fo
 
 
 ## Configure and Enable a New Virtual Host
-1. Create catalog.conf to edit: `sudo nano /etc/apache2/sites-available/catalog.conf`
-
+1. Create catalogapp.conf to edit: `sudo nano /etc/apache2/sites-available/catalogapp.conf`
 2. Add the following lines of code to the file to configure the virtual host. 
-
-	<VirtualHost *:80>
-                ServerName  ec2-34-200-253-54.compute-1.amazonaws.com
-                ServerAdmin <adminemailaddress.com>
-                WSGIScriptAlias / /var/www/catalog/catalogapp.wsgi
-                <Directory /var/www/catalog/catalog/>
-                        Order allow,deny
-                        Allow from all
-                </Directory>
-                Alias /static /var/www/catalog/catalog/static
-                <Directory /var/www/catalog/catalog/static/>
-                        Order allow,deny
-                        Allow from all
-                </Directory>
-                ErrorLog ${APACHE_LOG_DIR}/error.log
-                LogLevel warn
-                CustomLog ${APACHE_LOG_DIR}/access.log combined
-</VirtualHost>
 	
+	```
+	<VirtualHost *:80>
+		ServerName ec2-34-200-253-54.compute-1.amazonaws.com
+		ServerAdmin <ServerAdminEmail>
+		WSGIScriptAlias / /var/www/catalog/catalogapp.wsgi
+		<Directory /var/www/catalog/catalog/>
+			Order allow,deny
+			Allow from all
+		</Directory>
+		Alias /static /var/www/catalog/catalog/static
+		<Directory /var/www/catalog/catalog/static/>
+			Order allow,deny
+			Allow from all
+		</Directory>
+		ErrorLog ${APACHE_LOG_DIR}/error.log
+		LogLevel warn
+		CustomLog ${APACHE_LOG_DIR}/access.log combined
+	</VirtualHost>
+	```
 	
 3. Enable the virtual host with the following command: `sudo a2ensite catalog`
 
