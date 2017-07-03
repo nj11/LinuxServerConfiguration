@@ -175,12 +175,14 @@ Configure the Uncomplicated Firewall (UFW) to only allow incoming connections fo
 7. Rename `catalogapp.py` to `__init__.py` using `sudo mv /var/www/catalog/catalog/catalogapp.py /var/www/catalog/catalog/__init__.py`
 8. Edit `database_setup.py`, `lotsofcatalogitems.py` and change `engine = create_engine('sqlite:///itemcatalog.db')` to `engine = create_engine('postgresql://catalog:password@localhost/itemcatalog')`
 9. Run the database_setup.py using `sudo python database_setup.py`
+
 10.Populate mock data using `sudo python database_setup.py` 
+
 11.Check all necessary tables data has been created as below :
-    sudo su - postgres
-    psql -d itemcatalog
-    \d ( to see all tables created)
-    Run select  * from categories; ( to make sure categories table has some data )
+    `sudo su - postgres`
+    `psql -d itemcatalog`
+    `\d `
+    `select  * from categories;` 
 
 
 ## Configure and Enable a New Virtual Host
@@ -188,7 +190,7 @@ Configure the Uncomplicated Firewall (UFW) to only allow incoming connections fo
 
 2. Add the following lines of code to the file to configure the virtual host. 
 
-	```<VirtualHost *:80>
+	<VirtualHost *:80>
                 ServerName  ec2-34-200-253-54.compute-1.amazonaws.com
                 ServerAdmin <adminemailaddress.com>
                 WSGIScriptAlias / /var/www/catalog/catalogapp.wsgi
@@ -204,7 +206,7 @@ Configure the Uncomplicated Firewall (UFW) to only allow incoming connections fo
                 ErrorLog ${APACHE_LOG_DIR}/error.log
                 LogLevel warn
                 CustomLog ${APACHE_LOG_DIR}/access.log combined
-</VirtualHost>```
+</VirtualHost>
 	
 	
 3. Enable the virtual host with the following command: `sudo a2ensite catalog`
