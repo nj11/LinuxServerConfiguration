@@ -148,13 +148,21 @@ Configure the Uncomplicated Firewall (UFW) to only allow incoming connections fo
 	```
  
 ## Install dependencies for Catalog application.
+
 `sudo pip install --upgrade oauth2client`
+
 `sudo pip install requests`
+
 `sudo pip install sqlalchemy`
+
 `sudo pip install psycopg2`
+
 `sudo pip install flask`
+
 `sudo pip install werkzeug==0.9.6`
+
 `sudo pip install flask==0.9`
+
 
 ## Install git, clone and setup your Catalog App project.
 1. Install Git using `sudo apt-get install git`
@@ -180,8 +188,7 @@ Configure the Uncomplicated Firewall (UFW) to only allow incoming connections fo
 
 2. Add the following lines of code to the file to configure the virtual host. 
 
-	```
-	<VirtualHost *:80>
+	```<VirtualHost *:80>
                 ServerName  ec2-34-200-253-54.compute-1.amazonaws.com
                 ServerAdmin <adminemailaddress.com>
                 WSGIScriptAlias / /var/www/catalog/catalogapp.wsgi
@@ -197,8 +204,8 @@ Configure the Uncomplicated Firewall (UFW) to only allow incoming connections fo
                 ErrorLog ${APACHE_LOG_DIR}/error.log
                 LogLevel warn
                 CustomLog ${APACHE_LOG_DIR}/access.log combined
-</VirtualHost>
-	```
+</VirtualHost>```
+	
 	
 3. Enable the virtual host with the following command: `sudo a2ensite catalog`
 
