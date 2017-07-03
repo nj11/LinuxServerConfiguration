@@ -27,7 +27,9 @@ The Item catalog website has been deployed at the URL : http://ec2-34-200-253-54
 18.References.
     
 ## Launch Amazin AWS LightSail instance 
+
  1.Create a Amazon AWS webservices account and launch Amazon Lightsail instance.
+ 
  2.In the networking tab on amazon AWS console setup ports for this server. Add   
    Custom/TCP/80,Custom/TCP/2220/Custom/UDP/123.
  
@@ -37,7 +39,9 @@ The Item catalog website has been deployed at the URL : http://ec2-34-200-253-54
 3. In your terminal, type in
 	```ssh -i keyfilename.pem ubuntu@ec2-34-200-230-143.compute-1.amazonaws.com```
 4. Development Environment Information
+
 	Server name : ec2-34-200-253-54.compute-1.amazonaws.com
+	
 	Public IP Address 34.200.253.54
 	
  
@@ -45,11 +49,16 @@ The Item catalog website has been deployed at the URL : http://ec2-34-200-253-54
 
 Configure the Uncomplicated Firewall (UFW) to only allow incoming connections for SSH (port 2200), HTTP (port 80), and NTP (port 123)
 
-sudo ufw allow 2200/tcp
-sudo ufw allow 80/tcp
-sudo ufw allow 123/udp
-sudo ufw default allow outgoing
-sudo ufw enable
+
+`sudo ufw allow 2200/tcp`
+
+`sudo ufw allow 80/tcp`
+
+`sudo ufw allow 123/udp`
+
+`sudo ufw default allow outgoing`
+
+`sudo ufw enable`
 	
 ## Change the SSH port from 22 to 2200
 1. Use `sudo nano /etc/ssh/sshd_config` and then change Port 22 to Port 2200 , save & quit.
