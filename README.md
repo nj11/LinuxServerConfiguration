@@ -3,7 +3,7 @@ This is the Linux Server Confighuration project for "Full Stack Web Developer Na
 
 In this project, a Linux virtual machine needs to be configurated to launch the Item Catalog website.
 
-The Item catalog website has been deployed at the URL : http://ec2-34-200-253-54.compute-1.amazonaws.com/
+The Item catalog website has b een deployed at the URL : http://ec2-34-200-253-54.compute-1.amazonaws.com/
 
 ## Tasks
 1. Launch Amazon AWS LightSail Instance.
@@ -175,9 +175,7 @@ Configure the Uncomplicated Firewall (UFW) to only allow incoming connections fo
 7. Rename `catalogapp.py` to `__init__.py` using `sudo mv /var/www/catalog/catalog/catalogapp.py /var/www/catalog/catalog/__init__.py`
 8. Edit `database_setup.py`, `lotsofcatalogitems.py` and change `engine = create_engine('sqlite:///itemcatalog.db')` to `engine = create_engine('postgresql://catalog:password@localhost/itemcatalog')`
 9. Run the database_setup.py using `sudo python database_setup.py`
-
 10.Populate mock data using `sudo python database_setup.py` 
-
 11.Check all necessary tables data has been created as below :
     `sudo su - postgres`
     `psql -d itemcatalog`
@@ -243,11 +241,12 @@ Server error logs will be generated here :
 `sudo cat/var.log/apache2/error.log`
 
 In case you see runtime errors like below  :
-  client_secrets.json not found then edit the __init__.py file to give the full path to the file.Workaround in progress to fix this    
-  issue.
-  In google plus sign in if you see a error like origin_mismatch then make sure your public servername that was used in the catalog.conf 
-  file is added to allowed origins in google project via console.After adding authorized origin in google project redownload the 
-  client_secrets.json file and save it in project directory.The client_secrets file should have the new server name.
+
+  1.client_secrets.json not found then edit the __init__.py file to give the full path to the file.Workaround in progress to fix this      issue.
+  
+  2.In google plus sign in if you see a error like origin_mismatch then make sure your public servername that was used in the   
+    catalog.conf  file is added to allowed origins in google project via console.After adding authorized origin in google project   
+    redownload the client_secrets.json file and save it in project directory.The client_secrets file should have the new server name.
   
 
 ## References:
