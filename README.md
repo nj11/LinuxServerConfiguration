@@ -175,7 +175,9 @@ Configure the Uncomplicated Firewall (UFW) to only allow incoming connections fo
 7. Rename `catalogapp.py` to `__init__.py` using `sudo mv /var/www/catalog/catalog/catalogapp.py /var/www/catalog/catalog/__init__.py`
 8. Edit `database_setup.py`, `lotsofcatalogitems.py` and change `engine = create_engine('sqlite:///itemcatalog.db')` to `engine = create_engine('postgresql://catalog:password@localhost/itemcatalog')`
 9. Run the database_setup.py using `sudo python database_setup.py`
+
 10.Populate mock data using `sudo python database_setup.py` 
+
 11.Check all necessary tables data has been created as below :
     `sudo su - postgres`
     `psql -d itemcatalog`
