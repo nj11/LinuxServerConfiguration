@@ -38,10 +38,9 @@ The Item catalog website has been deployed at the URL : http://ec2-34-200-253-54
 	```ssh -i keyfilename.pem ubuntu@ec2-34-200-230-143.compute-1.amazonaws.com```
 4. Development Environment Information
 
-	Public IP Address
-
-	34.200.253.54
-  Servername:http://ec2-34-200-253-54.compute-1.amazonaws.com/
+	Public IP Address 34.200.253.54
+	
+        Servername:http://ec2-34-200-253-54.compute-1.amazonaws.com/
   
  ## Configure the Uncomplicated Firewall (UFW)
 
