@@ -1,5 +1,4 @@
-# Linux-Server-Configuration-UDACITY
-This is the Linux Server Confighuration project for "Full Stack Web Developer Nanodegree" on Udacity. 
+# Linux-Server-Configuration
 
 In this project, a Linux virtual machine needs to be configurated to launch the Item Catalog website.
 
